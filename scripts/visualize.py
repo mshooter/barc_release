@@ -18,13 +18,13 @@ from dominate.tags import *
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
-from stacked_hourglass.datasets.stanext24 import StanExt
-from stacked_hourglass.datasets.imgcrops import ImgCrops
-from combined_model.train_main_image_to_3d_withbreedrel import do_visual_epoch
-from combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj 
-from configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
+#import sys
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
+from barc_release.stacked_hourglass.datasets.stanext24 import StanExt
+from barc_release.stacked_hourglass.datasets.imgcrops import ImgCrops
+from barc_release.combined_model.train_main_image_to_3d_withbreedrel import do_visual_epoch
+from barc_release.combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj 
+from barc_release.configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
 
 
 def main(args):
@@ -32,16 +32,16 @@ def main(args):
     # load configs
     #   step 1: load default configs
     #   step 2: load updates from .yaml file
-    path_config = os.path.join(get_cfg_defaults().barc_dir, 'src', 'configs', args.config)
+    path_config = os.path.join(get_cfg_defaults().barc_dir, 'barc_release', 'configs', args.config)
     update_cfg_global_with_yaml(path_config)
     cfg = get_cfg_global_updated()
 
     # Select the hardware device to use for inference.
-    if torch.cuda.is_available() and cfg.device=='cuda':
-        device = torch.device('cuda', torch.cuda.current_device())
-        torch.backends.cudnn.benchmark = True
-    else:
-        device = torch.device('cpu')
+    #if torch.cuda.is_available() and cfg.device=='cuda':
+    #    device = torch.device('cuda', torch.cuda.current_device())
+    #    torch.backends.cudnn.benchmark = True
+    #else:
+    device = torch.device('cpu')
 
     path_model_file_complete = os.path.join(cfg.paths.ROOT_CHECKPOINT_PATH, args.model_file_complete) 
 

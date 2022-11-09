@@ -16,13 +16,13 @@ import glob
 from dominate import document
 from dominate.tags import *
 
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
-from stacked_hourglass.datasets.stanext24 import StanExt
-from combined_model.train_main_image_to_3d_withbreedrel import do_validation_epoch
-from combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj  
-from combined_model.loss_image_to_3d_withbreedrel import Loss
-from configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
+#import sys
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
+from barc_release.stacked_hourglass.datasets.stanext24 import StanExt
+from barc_release.combined_model.train_main_image_to_3d_withbreedrel import do_validation_epoch
+from barc_release.combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj  
+from barc_release.combined_model.loss_image_to_3d_withbreedrel import Loss
+from barc_release.configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
 
 
 def main(args):

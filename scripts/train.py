@@ -22,14 +22,14 @@ torch.manual_seed(52)
 np.random.seed(435)
 random.seed(643)
 
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
-from combined_model.train_main_image_to_3d_withbreedrel import do_training_epoch, do_validation_epoch
-from combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj 
-from combined_model.loss_image_to_3d_withbreedrel import Loss
-from stacked_hourglass.utils.misc import save_checkpoint, adjust_learning_rate
-from stacked_hourglass.datasets.samplers.custom_pair_samplers import CustomPairBatchSampler
-from configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
+#import sys
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../', 'src'))
+from barc_release.combined_model.train_main_image_to_3d_withbreedrel import do_training_epoch, do_validation_epoch
+from barc_release.combined_model.model_shape_v7 import ModelImageTo3d_withshape_withproj 
+from barc_release.combined_model.loss_image_to_3d_withbreedrel import Loss
+from barc_release.stacked_hourglass.utils.misc import save_checkpoint, adjust_learning_rate
+from barc_release.stacked_hourglass.datasets.samplers.custom_pair_samplers import CustomPairBatchSampler
+from barc_release.configs.barc_cfg_defaults import get_cfg_defaults, update_cfg_global_with_yaml, get_cfg_global_updated
 
 
 
