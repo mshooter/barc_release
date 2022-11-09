@@ -11,7 +11,7 @@ from kornia.geometry.subpix import dsnt     # kornia 0.4.0
 import os
 #import sys
 from barc_release.stacked_hourglass.utils.evaluation import get_preds_soft
-from barc_release.stacked_hourglass import hg1, hg2, hg8
+from barc_release.stacked_hourglass.model import hg1, hg2, hg8
 from barc_release.lifting_to_3d.linear_model import LinearModelComplete, LinearModel      
 from barc_release.lifting_to_3d.inn_model_for_shape import INNForShape
 from barc_release.lifting_to_3d.utils.geometry_utils import rot6d_to_rotmat, rotmat_to_rot6d

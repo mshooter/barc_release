@@ -5,7 +5,7 @@ paths:
   MODELPATH_NORMFLOW: './checkpoint/barc_normflow_pret/rgbddog_v3_model.pt'
 
 optim:
-  BATCH_SIZE: 24      
+  BATCH_SIZE: 2 
 
 data:
   DATASET: 'ImgCrops' #'stanext24'  # 'ImgCrops'   # 'stanext24'

@@ -1,8 +1,8 @@
 
 #custom 
-checkpoint
+checkpoint/
 debugging
-src/smal_pytorch/smal_data/optional
+barc_release/smal_pytorch/smal_data/optional
 /datasets/*
 !/datasets/test_image_crops
 /data/stanext_related_data
